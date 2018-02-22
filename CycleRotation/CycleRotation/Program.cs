@@ -8,23 +8,23 @@ namespace CycleRotation
 {
     class Program
     {
-        static int[] solution(int[] A, int N, int K)
+        static int[] solution(int[] A, int K)
         {
-            int[] newArray = new int[N];
+            int[] newArray = new int[A.Length];
             int newInd = 0;
-            for (int i=0; i < N; i++)
+            for (int i=0; i < A.Length; i++)
             {
                 newInd = i;
                 newInd += K;
-                if (newInd > N - 1)
-                    newInd = newInd - N;
+                if (newInd > A.Length - 1)
+                    newInd = newInd - A.Length;
                 newArray[newInd] = A[i];
             }
-            return newArray.ToArray(); 
+            return newArray; 
         }
         static void Main(string[] args)
         {
-            Console.Write(solution(new int[] { 0, 0, 0}, 5, 3));
+            Console.Write(string.Join(",",solution(new int[] { 3, 8, 9, 7, 6 }, 3)));
             Console.ReadLine();
         }
     }
